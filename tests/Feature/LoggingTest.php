@@ -47,4 +47,16 @@ class LoggingTest extends TestCase
         Log::info("Hello Laravel");
         self::assertTrue(true);
     }
+
+    public function testFileHandler(){
+        $file_logger = Log::channel("file");
+        $file_logger->info("Hello File Handler");
+        $file_logger->warning("Hello File Handler");
+        $file_logger->error("Hello File Handler");
+        $file_logger->critical("Hello File Handler");
+
+        self::assertTrue(true);
+    }
+
+    
 }
